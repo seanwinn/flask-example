@@ -25,4 +25,7 @@ before_script:
 script:
   - py.test
 
+after_success:
+  - git push -f openshift $BRANCH:master
+
 archive: true
