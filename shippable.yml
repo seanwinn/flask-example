@@ -15,7 +15,6 @@ install:
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
-  - python initialize.py
   - cd wsgi
 
 script:
