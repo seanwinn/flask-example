@@ -1,6 +1,6 @@
 env:
   global:
-    - OPENSHIFT_REPO=ssh://545ea4964382ec337f000009@blueprint-neependra.rhcloud.com/~/git/blueprint.git
+    - OPENSHIFT_REPO=ssh://545eae6c5004462c0100001a@blueprint-neependra.rhcloud.com/~/git/blueprint.git
 
 language: python
 
