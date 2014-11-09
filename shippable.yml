@@ -1,3 +1,7 @@
+env:
+  global:
+    - OPENSHIFT_REPO=ssh://545ea4964382ec337f000009@blueprint-neependra.rhcloud.com/~/git/blueprint.git
+
 language: python
 
 python:
@@ -11,8 +15,13 @@ install:
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
+  - git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_REPO
+  - cd wsgi
 
 script:
   - py.test
+
+after_success:
+  - git push -f openshift $BRANCH:master
 
 archive: true
